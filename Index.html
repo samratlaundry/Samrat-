@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samrat Laundry & Drycleaning Service | DLF Phase 3, Gurgaon</title>
+    <style>
+        :root {
+            --primary-color: #0b3c5d;
+            --secondary-color: #328cc1;
+            --accent-color: #d9b310;
+            --light-bg: #f4f7f6;
+            --dark-text: #1d2731;
+            --whatsapp-green: #25D366;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #fff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(11, 60, 93, 0.8), rgba(11, 60, 93, 0.8)), url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Container Sections */
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            background: var(--light-bg);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .pricing-table th, .pricing-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .pricing-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Calculator Card */
+        .calc-box {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .calc-box label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .calc-box select, .calc-box input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .calc-result {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 10px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">SAMRAT <span>LAUNDRY</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#services">👕 Services</a></li>
+                    <li><a href="#dry-cleaning">🧥 Dry Cleaning</a></li>
+                    <li><a href="#pricing">💰 Pricing</a></li>
+                    <li><a href="#calculator">🧮 Calculator</a></li>
+                    <li><a href="#premium">💎 Premium</a></li>
+                    <li><a href="#why-us">❓ Why Us</a></li>
+                    <li><a href="#how-it-works">🔄 How It Works</a></li>
+                    <li><a href="#about">ℹ️ About</a></li>
+                    <li><a href="#contact">📞 Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Samrat Laundry & Dry Cleaning Service</h1>
+        <p>"Your Clothes, Our Responsibility" — Quality Fabric Care with Free Pickup & Delivery in DLF Phase 3, Gurgaon</p>
+        <a href="https://wa.me/918527901289?text=Hi,%20I%20would%20like%20to%20book%20a%20laundry%20pickup." class="btn-whatsapp" target="_blank">📲 Book via WhatsApp (+91 8527901289)</a>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+        <h2 class="section-title">👕 Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Wash, Dry & Fold</h3>
+                <p>Everyday wear processed with premium detergent and softeners. Starting from ₹55/kg.</p>
+            </div>
+            <div class="service-card">
+                <h3>Wash & Iron</h3>
+                <p>Cleaned, dried, and professionally ironed for crisp everyday office or casual wear. Starting from ₹75/kg.</p>
+            </div>
+            <div class="service-card">
+                <h3>Steam Pressing</h3>
+                <p>Crisp, wrinkle-free finishing that maintains fabric quality and look.</p>
+            </div>
+            <div class="service-card">
+                <h3>Shoe Cleaning</h3>
+                <p>Professional shoe cleaning starting from ₹250 to bring back fresh look and feel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dry Cleaning -->
+    <section id="dry-cleaning" class="section" style="background-color: var(--light-bg);">
+        <h2 class="section-title">🧥 Dry Cleaning & Care</h2>
+        <p style="text-align:center; max-width: 800px; margin: auto; margin-bottom: 20px;">
+            Specialized dry cleaning for suits, designer sarees, heavy lehengas, woolens, and home linens using fabric-safe chemicals and expert handling.
+        </p>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Gents Garments</th>
+                    <th>Rate</th>
+                    <th>Ladies Garments</th>
+                    <th>Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Shirt / T-Shirt</td>
+                    <td>₹100</td>
+                    <td>Kurta / Tops</td>
+                    <td>₹100</td>
+                </tr>
+                <tr>
+                    <td>Coat Pant / Suit (2 Pcs)</td>
+                    <td>₹300</td>
+                    <td>Kurta Salwar + Dupatta</td>
+                    <td>₹250</td>
+                </tr>
+                <tr>
+                    <td>Blazer / Jacket</td>
+                    <td>₹200</td>
+                    <td>Saree / Designer Saree</td>
+                    <td>₹300 - ₹350</td>
+                </tr>
+                <tr>
+                    <td>Sherwani</td>
+                    <td>₹450</td>
+                    <td>Lehenga</td>
+                    <td>₹600</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+        <h2 class="section-title">💰 Standard Pricing Rates</h2>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Service Category</th>
+                    <th>Standard Rate</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Wash, Dry & Fold</td>
+                    <td>₹55 / kg</td>
+                    <td>Everyday items (Min 4 kg for free pickup)</td>
+                </tr>
+                <tr>
+                    <td>Wash & Iron</td>
+                    <td>₹75 / kg</td>
+                    <td>Washed and steam-ironed</td>
+                </tr>
+                <tr>
+                    <td>Winter Woolen Clothes</td>
+                    <td>₹100 / kg</td>
+                    <td>Special woolen care</td>
+                </tr>
+                <tr>
+                    <td>Premium Laundry</td>
+                    <td>₹145 / kg</td>
+                    <td>Enhanced stain care, fabric conditioner, premium packing</td>
+                </tr>
+                <tr>
+                    <td>Blanket Wash</td>
+                    <td>₹250 - ₹500 / pc</td>
+                    <td>Single: ₹250 | Double: ₹350 | Heavy/King: ₹500</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Estimate Calculator -->
+    <section id="calculator" class="section" style="background-color: var(--light-bg);">
+        <h2 class="section-title">🧮 Estimate Calculator</h2>
+        <div class="calc-box">
+            <label for="service-type">Select Service:</label>
+            <select id="service-type" onchange="calculateTotal()">
+                <option value="55">Wash, Dry & Fold (₹55/kg)</option>
+                <option value="75">Wash & Iron (₹75/kg)</option>
+                <option value="100">Winter Woolens (₹100/kg)</option>
+                <option value="145">Premium Laundry (₹145/kg)</option>
+            </select>
+
+            <label for="weight">Weight (in Kg):</label>
+            <input type="number" id="weight" value="5" min="1" oninput="calculateTotal()">
+
+            <label for="express-option">Turnaround Speed:</label>
+            <select id="express-option" onchange="calculateTotal()">
+                <option value="0">Standard Delivery (2 Days)</option>
+                <option value="150">Fast Service / Express (+$150 extra flat fee)</option>
+            </select>
+
+            <div class="calc-result" id="total-price">Estimated Total: ₹275</div>
+        </div>
+    </section>
+
+    <!-- Premium Laundry -->
+    <section id="premium" class="section">
+        <h2 class="section-title">💎 Premium Laundry Care</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto;">
+            Our Premium Laundry service (₹145/kg) offers individual machine washing, fabric softeners, specialized stain treatment, hygienic handling, and neat folding/packing suitable for high-end garments and guest house/hotel linens.
+        </p>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="section" style="background-color: var(--light-bg);">
+        <h2 class="section-title">❓ Why Choose Us</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🛵 Free Pick & Drop</h3>
+                <p>Complimentary doorstep collection and delivery for orders over 4 kg in DLF Phase 3.</p>
+            </div>
+            <div class="service-card">
+                <h3>🌸 Fabric Softeners & Sanitization</h3>
+                <p>Care with specialized fabric softeners, fresh scents, and hygienic handling.</p>
+            </div>
+            <div class="service-card">
+                <h3>🏷️ Discount Specials</h3>
+                <p>Every Tuesday enjoy a 15% discount on laundry weights of minimum 8 kg!</p>
+            </div>
+            <div class="service-card">
+                <h3>⚡ Fast Turnaround</h3>
+                <p>Standard 24–48 hour delivery or express same-day / next-day delivery options available.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section">
+        <h2 class="section-title">🔄 How It Works</h2>
+        <div class="services-grid">
+            <div class="service-card"><strong>1. Schedule Pickup</strong><br>Call or WhatsApp us with your location and items.</div>
+            <div class="service-card"><strong>2. Tag & Inspect</strong><br>We inspect pockets, sort by fabric type, and tag items carefully.</div>
+            <div class="service-card"><strong>3. Wash & Iron</strong><br>Processed according to individual care labels with quality detergents.</div>
+            <div class="service-card"><strong>4. Delivery</strong><br>Neatly packed garments returned directly to your doorstep.</div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="section" style="background-color: var(--light-bg);">
+        <h2 class="section-title">ℹ️ About Us</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto;">
+            <strong>Samrat Laundry & Drycleaning Service</strong> provides dependable, professional, and hygienic garment care in Sector 24 and DLF Phase 3, Gurugram. Guided by our motto, <em>"We Care What You Wear / Your Clothes, Our Responsibility"</em>, we cater to individual residents, working professionals, guest houses, and hotel clients.
+        </p>
+    </section>
+
+    <!-- Contact & Booking -->
+    <section id="contact" class="section">
+        <h2 class="section-title">📞 Contact & Book Now</h2>
+        <div style="text-align: center; font-size: 1.1rem;">
+            <p><strong>Phone / WhatsApp:</strong> +91 8527901289 / +91 9310416063</p>
+            <p><strong>Address:</strong> U-42/8, U Block, DLF Phase III, Sector 24, Gurugram, Haryana - 122010</p>
+            <p><strong>Service Hours:</strong> 10:30 AM – 10:30 PM</p>
+            <br>
+            <a href="https://wa.me/918527901289" class="btn-whatsapp" target="_blank">📲 Send WhatsApp Booking Request</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Samrat Laundry & Drycleaning Service. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive Calculator Script -->
+    <script>
+        function calculateTotal() {
+            const ratePerKg = parseFloat(document.getElementById('service-type').value);
+            const weight = parseFloat(document.getElementById('weight').value) || 0;
+            const expressFee = parseFloat(document.getElementById('express-option').value);
+
+            let total = (ratePerKg * weight) + expressFee;
+            document.getElementById('total-price').innerText = "Estimated Total: ₹" + total.toFixed(0);
+        }
+    </script>
+</body>
+</html>
